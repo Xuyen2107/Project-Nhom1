@@ -1,0 +1,83 @@
+.card {
+   position: relative;
+   overflow: hidden;
+}
+
+.card_1:nth-child(1) {
+   grid-area: span 2 / span 2;
+}
+
+.card_label {
+   position: absolute;
+   background-image: linear-gradient(to right, yellow 0%, red 30%, orange 100%);
+   padding: 5px;
+   z-index: 1;
+   opacity: 0.8;
+   font-weight: 600;
+   color: #fff;
+}
+
+.card_label::after {
+   position: absolute;
+   content: "";
+   width: 0;
+   height: 0;
+   border-left: 10px solid transparent;
+   border-right: 10px solid transparent;
+   border-top: 10px solid orange;
+   left: 40%;
+   bottom: -11px;
+   opacity: 0.8;
+   z-index: 1;
+}
+
+.card_link {
+   position: relative;
+}
+
+.card_img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: all 0.5s ease-in-out;
+}
+
+.card_title {
+   position: absolute;
+   z-index: 1;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   padding: 5px;
+   background-color: rgba(15, 15, 15, 0.6);
+   color: #fff;
+   font-weight: calc(400);
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+   font-size: 16px;
+}
+
+.card_icon_play {
+   display: none;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 50px;
+   color: orange;
+   opacity: 0.5;
+   z-index: 1;
+}
+
+.card:hover {
+   box-shadow: 5px 5px 10px rgba(23, 22, 22, 0.8);
+}
+
+.card:hover .card_img {
+   transform: scale(1.4);
+}
+
+.card:hover .card_icon_play {
+   display: block;
+}

@@ -1,0 +1,44 @@
+.home-title {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.category {
+   font-size: 30px;
+   font-weight: 600;
+}
+
+.watch-all-link {
+   display: block;
+   text-decoration: none;
+   padding: 10px;
+   color: black;
+}
+
+.hr {
+   border: 2px solid orange;
+   margin: 10px 0;
+}
+
+.watch-all-link:hover {
+   color: orange;
+}
+
+.list-movie {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: repeat(3, 145px);
+   gap: 20px;
+}
+
+.list-movie-1 {
+   grid-template-rows: repeat(2, 145px);
+}
+
+.home-hr-end {
+   display: block;
+   border: 1px solid #000;
+   width: 500px;
+   margin: 20px auto 50px auto;
+}

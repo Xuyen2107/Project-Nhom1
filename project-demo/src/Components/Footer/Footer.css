@@ -1,0 +1,26 @@
+.footer {
+   display: grid;
+   margin-top: 50px;
+   background-color: black;
+   grid-template-columns: repeat(5, 1fr);
+   padding: 10px;
+}
+
+.footer-menu {
+   white-space: nowrap;
+   line-height: 1.5;
+}
+
+.footer-item-top {
+   color: orange;
+}
+
+.footer-link {
+   color: #fff;
+   text-decoration: none;
+}
+
+.footer-link:hover {
+   color: orange;
+   border-bottom: 1px solid orange;
+}
