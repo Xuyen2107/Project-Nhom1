@@ -20,7 +20,7 @@ const DanhMucHook = () => {
          (item) =>
             item?.category?.includes(category) ||
             item?.country?.includes(category) ||
-            (typeof item?.year === "string" && item?.year.includes(category))
+            category.includes(item?.year)
       );
 
       const newArr = arr.reverse().slice(0, 25);

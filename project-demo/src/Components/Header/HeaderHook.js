@@ -5,6 +5,7 @@ const HookHeader = () => {
    const [inputValue, setInputValue] = useState("");
    const [listAllMovie, setListAllMovie] = useState([]);
    const [listMovie, setListMovie] = useState([]);
+   const [result, setResult] = useState(false);
 
    useEffect(() => {
       const newAllMovie = allMovies.map((prop) => {
@@ -38,11 +39,22 @@ const HookHeader = () => {
          setListMovie([]);
       }
    }, [inputValue, listAllMovie]);
+
+   useEffect(() => {
+      if (result) {
+         setInputValue("");
+      }
+   }, [result]);
+
    const searchInputChange = (e) => {
       setInputValue(e.target.value);
    };
 
-   return { searchInputChange, listMovie, inputValue };
+   const click = () => {
+      setResult(!result);
+   };
+
+   return { searchInputChange, listMovie, inputValue, result, click };
 };
 
 export default HookHeader;

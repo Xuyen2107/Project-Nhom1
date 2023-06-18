@@ -8,7 +8,7 @@ const Footer = () => {
       <footer className="footer">
          <div className="footer-left">
             <NavLink to="/" className="footer-link-home">
-               <img src="" alt="logo" className="footer-img" />
+               <img src={require("../../Image/logo-phimmoi.png")} alt="logo" className="logo-img" />
             </NavLink>
          </div>
 

@@ -6,7 +6,7 @@ const Card = ({ addClassName, nowPlaying, link, image, name, id }) => {
    return (
       <li key={id} className={`${styles.card} ${addClassName ? `${styles.card_1}` : ""}`}>
          <label className={styles.card_label}>{nowPlaying}</label>
-         <NavLink to={`/gioi-thieu-phim/${id}-${link}`} title={name} className={styles.card_link}>
+         <NavLink to={`/gioi-thieu-phim/${id}_${link}`} title={name} className={styles.card_link}>
             <img
                className={styles.card_img}
                src={require(`../../Image/Movie-Item/${image}`)}

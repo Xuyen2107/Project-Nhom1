@@ -23,7 +23,7 @@ const Home = () => {
             <div className="home-title">
                <label className="category">PHIM LẺ MỚI CẬP NHẬT</label>
                <div className="watch-all">
-                  <NavLink to="" className="watch-all-link">
+                  <NavLink to="/danh-muc?category=Phim Lẻ" className="watch-all-link">
                      Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
                   </NavLink>
                </div>
@@ -77,7 +77,7 @@ const Home = () => {
             <div className="home-title">
                <label className="category">PHIM CHIẾU RẠP</label>
                <div className="watch-all">
-                  <NavLink to="" className="watch-all-link">
+                  <NavLink to="/danh-muc?category=Phim Chiếu Rạp" className="watch-all-link">
                      Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
                   </NavLink>
                </div>
@@ -104,7 +104,7 @@ const Home = () => {
             <div className="home-title">
                <label className="category">PHIM THỊNH HÀNH</label>
                <div className="watch-all">
-                  <NavLink to="" className="watch-all-link">
+                  <NavLink to="/danh-muc?category=Phim Thịnh Hành" className="watch-all-link">
                      Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
                   </NavLink>
                </div>
@@ -131,7 +131,7 @@ const Home = () => {
             <div className="home-title">
                <label className="category">PHIM SẮP CHIẾU</label>
                <div className="watch-all">
-                  <NavLink to="" className="watch-all-link">
+                  <NavLink to="/danh-muc?category=Phim Sắp Chiếu" className="watch-all-link">
                      Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
                   </NavLink>
                </div>

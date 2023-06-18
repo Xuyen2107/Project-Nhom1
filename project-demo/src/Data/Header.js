@@ -5,7 +5,7 @@ export const dataHeader = [
    },
    {
       Name: "DANH MỤC",
-      Link: "##",
+      Link: "hgfdsjhgf",
       Icon: "fa-solid fa-angle-down",
       SubMenu: [
          {
@@ -190,27 +190,27 @@ export const dataFooter = [
       PhimMoi: [
          {
             Name: "Phim chiếu rạp",
-            Link: "/danh-muc/phim-chieu-rap",
+            Link: "/danh-muc?category=Phim Chiếu Rạp",
          },
          {
             Name: "Phim lẻ",
-            Link: "/danh-muc/phim-chieu-le",
+            Link: "/danh-muc?category=Phim Lẻ",
          },
          {
             Name: "Phim bộ",
-            Link: "/danh-muc/phim-chieu-bo",
+            Link: "/danh-muc?category=Phim Bộ",
          },
          {
             Name: "Phim hành động",
-            Link: "/the-loai/phim-hanh-dong",
+            Link: "/danh-muc?category=Phim Hành Động",
          },
          {
             Name: "Phim viễn tưởng",
-            Link: "/the-loai/phim-vien-tuong",
+            Link: "/danh-muc?category=Phim Viễn Tưởng",
          },
          {
             Name: "Phim tâm lý",
-            Link: "/the-loai/phim-tam-ly",
+            Link: "/danh-muc?category=Phim Tâm Lý",
          },
          {
             Name: "Phim hài hước",

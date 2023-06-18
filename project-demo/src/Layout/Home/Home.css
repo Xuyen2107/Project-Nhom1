@@ -1,7 +1,12 @@
+.home {
+   padding: 0 50px;
+}
 .home-title {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   background-color: #dfe4ea;
+   padding: 5px 0;
 }
 
 .category {
@@ -12,7 +17,7 @@
 .watch-all-link {
    display: block;
    text-decoration: none;
-   padding: 10px;
+   font-size: 18px;
    color: black;
 }
 
@@ -25,15 +30,15 @@
    color: orange;
 }
 
+.home-row {
+   background-color: #dfe4ea;
+}
+
 .list-movie {
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: repeat(3, 145px);
+   grid-auto-rows: 145px;
    gap: 20px;
-}
-
-.list-movie-1 {
-   grid-template-rows: repeat(2, 145px);
 }
 
 .home-hr-end {

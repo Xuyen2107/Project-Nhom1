@@ -6,12 +6,8 @@ import "./Header.css";
 import { useState } from "react";
 
 const Header = () => {
-   const { searchInputChange, listMovie, inputValue } = HookHeader();
-   const [result, setResult] = useState(false);
-   const click = () => {
-      setResult(!result);
-      console.log(result);
-   };
+   const { searchInputChange, listMovie, inputValue, click, result } = HookHeader();
+
    return (
       <header id="header">
          <nav id="navbar">
@@ -40,7 +36,7 @@ const Header = () => {
                               {Item.SubMenu.map((item, idx) => (
                                  <li key={idx} className="sub-menu-item">
                                     <NavLink
-                                       to={`/danh-muc?category=${item.Link}`}
+                                       to={`/danh-muc?category=${item.Name}`}
                                        className="sub-menu-link"
                                     >
                                        {item.Name}
@@ -100,9 +96,19 @@ const Header = () => {
                   <div className="return">
                      <ul>
                         {listMovie.length === 0 && inputValue.length > 0 ? (
-                           <li>No item</li>
+                           <li>Không có kết quả tìm kiếm cho từ khóa "{inputValue}"</li>
                         ) : (
-                           listMovie.map((movie) => <li key={movie.id}>{movie.name}</li>)
+                           listMovie.map((movie) => (
+                              <li key={movie.id}>
+                                 <NavLink
+                                    to={`/gioi-thieu-phim/${movie.id}_${movie.link}`}
+                                    className="return-link"
+                                    onClick={click}
+                                 >
+                                    {movie.name}
+                                 </NavLink>
+                              </li>
+                           ))
                         )}
                      </ul>
                   </div>

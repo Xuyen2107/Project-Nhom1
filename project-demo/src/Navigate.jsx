@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import GioiThieuPhim from "./Layout/GioiThieuPhim/GioiThieuPhim.jsx";
 import DanhMuc from "./Layout/DanhMuc/DanhMuc.jsx";
+import XemPhim from "./Layout/XemPhim/XemPhim.jsx";
 
 const Navigate = () => {
    return (
@@ -14,6 +15,7 @@ const Navigate = () => {
             <Route path="/" element={<Home />} />
             <Route path="/gioi-thieu-phim/:id" element={<GioiThieuPhim />} />
             <Route path="/danh-muc" element={<DanhMuc />} />
+            <Route path="/xem-phim/:idx" element={<XemPhim />} />
          </Routes>
 
          <Footer />
