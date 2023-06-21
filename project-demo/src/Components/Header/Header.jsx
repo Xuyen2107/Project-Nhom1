@@ -7,7 +7,6 @@ import { useState } from "react";
 
 const Header = () => {
    const { searchInputChange, listMovie, inputValue, click, result } = HookHeader();
-
    return (
       <header id="header">
          <nav id="navbar">
@@ -25,15 +24,22 @@ const Header = () => {
                   {/* <li className="menu-icon">
                      <i class="fa-solid fa-bars"></i>
                   </li> */}
-                  {dataHeader.map((Item, idx) => (
+                  {dataHeader.map((item, idx) => (
                      <li key={idx} className="main-menu-item">
-                        <NavLink to={Item.Link} className="main-menu-link">
-                           {Item.Name}
-                           {Item.Icon && <i className={`${Item.Icon} main-menu-icon`}></i>}
-                        </NavLink>
-                        {Item.SubMenu && (
+                        {item.Link ? (
+                           <NavLink to={item.Link} className="main-menu-link">
+                              {item.Name}
+                              {item.Icon && <i className={`${item.Icon} main-menu-icon`}></i>}
+                           </NavLink>
+                        ) : (
+                           <>
+                              {item.Name}
+                              {item.Icon && <i className={`${item.Icon} main-menu-icon`}></i>}{" "}
+                           </>
+                        )}
+                        {item.SubMenu && (
                            <ul className="sub-menu">
-                              {Item.SubMenu.map((item, idx) => (
+                              {item.SubMenu.map((item, idx) => (
                                  <li key={idx} className="sub-menu-item">
                                     <NavLink
                                        to={`/danh-muc?category=${item.Name}`}

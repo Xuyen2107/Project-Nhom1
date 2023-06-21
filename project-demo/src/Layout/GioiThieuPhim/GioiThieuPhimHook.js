@@ -5,25 +5,23 @@ import { allMovies } from "../../Data/DataALLMovies.js";
 const MovieDetail = () => {
    const { id } = useParams();
    const [movieId, link] = id.split("_");
-   const [selectMovie, setSelectMovie] = useState(null);
-   const [listAllMovie, setListAllMovie] = useState([]);
+   const [listAllMovie, setListAllMovie] = useState(allMovies);
+   const [selectMovie, setSelectMovie] = useState([]);
    const [result, setResult] = useState(false);
    const elementRef = useRef();
 
    useEffect(() => {
-      setListAllMovie(allMovies);
-   }, []);
-
-   useEffect(() => {
-      const movieDetail = listAllMovie.find((x) => x.id === parseInt(movieId));
-      setSelectMovie(movieDetail);
+      if (movieId && listAllMovie.length > 0) {
+         const movieDetail = listAllMovie.find((x) => x.id === parseInt(movieId));
+         setSelectMovie(movieDetail);
+      }
    }, [movieId, listAllMovie]);
 
    useEffect(() => {
       if (result) {
          elementRef.current.scrollIntoView({ behavior: "smooth" });
       }
-   });
+   }, [result]);
 
    const videoTrailer = () => {
       setResult(!result);

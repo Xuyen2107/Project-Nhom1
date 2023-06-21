@@ -1,0 +1,33 @@
+.category_title {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: #dfe4ea;
+   padding: 5px 0;
+}
+
+.category {
+   display: inline-block;
+   font-size: clamp(24px, 3vw, 30px);
+   font-weight: 600;
+   text-transform: uppercase;
+   color: #ffa500;
+}
+
+.see_all_link {
+   color: #333;
+   font-size: clamp(16px, 1.5vw, 18px);
+}
+
+.category_icon {
+   font-size: clamp(16px, 1.5vw, 18px);
+}
+
+.see_all_link:hover {
+   color: #ffa500;
+}
+
+.category_hr {
+   border: 2px solid #ffa500;
+   margin: 5px 0;
+}

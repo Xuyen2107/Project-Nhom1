@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import MovieWatchDetail from "./XemPhimHook";
+import LikeShare from "../../Components/LikeShare/LikeShare";
 import style from "./XemPhim.module.css";
 
 const XemPhim = () => {
@@ -36,6 +37,8 @@ const XemPhim = () => {
          </span>
 
          <hr className={style.watch_hr} />
+
+         <LikeShare likeNumber={selectMovie?.like} rateNumber={selectMovie?.rate} />
 
          <hr className={style.watch_hr_1} />
          <div className={style.watch_bottom}>

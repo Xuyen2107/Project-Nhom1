@@ -1,9 +1,8 @@
 import React from "react";
 import Card from "../../Components/Card/Card";
+import CategoryTitle from "../../Components/CategoryTitle/CategoryTitle.jsx";
+import HomeHock from "./HomeHook";
 import "./Home.css";
-import { NavLink } from "react-router-dom";
-import HomeHock from "./Hook";
-
 const Home = () => {
    const {
       listPhimLe,
@@ -15,20 +14,16 @@ const Home = () => {
    } = HomeHock();
 
    return loading ? (
-      <h1 style={{ height: "100vh" }}> Đang tải phim...</h1>
+      <h2 style={{ height: "100vh" }}> Đang tải phim...</h2>
    ) : (
       <div className="home">
          <div className="slide-movie"></div>
          <div className="home-movie">
-            <div className="home-title">
-               <label className="category">PHIM LẺ MỚI CẬP NHẬT</label>
-               <div className="watch-all">
-                  <NavLink to="/danh-muc?category=Phim Lẻ" className="watch-all-link">
-                     Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
-                  </NavLink>
-               </div>
-            </div>
-            <hr className="hr" />
+            <CategoryTitle
+               category="PHIM LẺ MỚI CẬP NHẬT"
+               showLink
+               link="/danh-muc?category=Phim Lẻ"
+            />
             <div className="home-row">
                <ul className="list-movie">
                   {listPhimLe.map((item) => (
@@ -47,15 +42,11 @@ const Home = () => {
             <hr className="home-hr-end" />
          </div>
          <div className="home-movie">
-            <div className="home-title">
-               <label className="category">PHIM BỘ MỚI CẬP NHẬT</label>
-               <div className="watch-all">
-                  <NavLink to="/danh-muc?category=Phim Bộ" className="watch-all-link">
-                     Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
-                  </NavLink>
-               </div>
-            </div>
-            <hr className="hr" />
+            <CategoryTitle
+               category="PHIM BỘ MỚI CẬP NHẬT"
+               showLink
+               link="/danh-muc?category=Phim Bộ"
+            />
             <div className="home-row">
                <ul className="list-movie">
                   {listPhimBo.map((item) => (
@@ -74,15 +65,11 @@ const Home = () => {
             <hr className="home-hr-end" />
          </div>
          <div className="home-movie">
-            <div className="home-title">
-               <label className="category">PHIM CHIẾU RẠP</label>
-               <div className="watch-all">
-                  <NavLink to="/danh-muc?category=Phim Chiếu Rạp" className="watch-all-link">
-                     Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
-                  </NavLink>
-               </div>
-            </div>
-            <hr className="hr" />
+            <CategoryTitle
+               category="PHIM CHIẾU RẠP"
+               showLink
+               link="/danh-muc?category=Phim Chiếu Rạp"
+            />
             <div className="home-row">
                <ul className="list-movie">
                   {listPhimChieuRap.map((item) => (
@@ -101,15 +88,11 @@ const Home = () => {
             <hr className="home-hr-end" />
          </div>
          <div className="home-movie">
-            <div className="home-title">
-               <label className="category">PHIM THỊNH HÀNH</label>
-               <div className="watch-all">
-                  <NavLink to="/danh-muc?category=Phim Thịnh Hành" className="watch-all-link">
-                     Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
-                  </NavLink>
-               </div>
-            </div>
-            <hr className="hr" />
+            <CategoryTitle
+               category="PHIM THỊNH HÀNH"
+               showLink
+               link="/danh-muc?category=Phim Thịnh Hành"
+            />
             <div className="home-row">
                <ul className="list-movie list-movie-1">
                   {listPhimThinhHanh.map((item) => (
@@ -128,15 +111,11 @@ const Home = () => {
             <hr className="home-hr-end" />
          </div>
          <div className="home-movie">
-            <div className="home-title">
-               <label className="category">PHIM SẮP CHIẾU</label>
-               <div className="watch-all">
-                  <NavLink to="/danh-muc?category=Phim Sắp Chiếu" className="watch-all-link">
-                     Xem tất cả <i class="fa-solid fa-caret-right watch-all-icon"></i>
-                  </NavLink>
-               </div>
-            </div>
-            <hr className="hr" />
+            <CategoryTitle
+               category="PHIM SẮP CHIÊU"
+               showLink
+               link="/danh-muc?category=Phim Sắp Chiếu"
+            />
             <div className="home-row">
                <ul className="list-movie list-movie-1">
                   {listPhimSapChieu.map((item) => (

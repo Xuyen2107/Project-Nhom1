@@ -7,13 +7,16 @@ const filterMovie = (condition, numberStart, numberEnd) => {
    return newArr;
 };
 const HomeHock = () => {
-   const [movies, setMovies] = useState([]);
+   const [movies, setMovies] = useState(null);
    const [listPhimLe, setListPhimLe] = useState([]);
    const [listPhimBo, setListPhimBo] = useState([]);
    const [listPhimChieuRap, setListPhimChieuRap] = useState([]);
    const [listPhimThinhHanh, setListPhimThinhHanh] = useState([]);
    const [listPhimSapChieu, setListPhimSapChieu] = useState([]);
    const [loading, setLoading] = useState(false);
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
 
    useEffect(() => {
       setMovies(allMovies);

@@ -1,0 +1,58 @@
+.rate_movie {
+   background-color: #ced6e0;
+   padding: 10px 0;
+}
+
+.like_share {
+   display: flex;
+   gap: 10px;
+   margin-bottom: 10px;
+}
+
+.like_btn,
+.share_btn {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   background-color: blue;
+   font-size: 16px;
+   padding: 5px 10px;
+   color: #fff;
+   border-radius: 10px;
+}
+
+.like_icon,
+.share_icon {
+   font-size: 14px;
+}
+
+.rate_star {
+   line-height: 1.5;
+}
+
+.rate_title {
+   display: block;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.start_area {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}
+
+.star_icon {
+   color: #fff;
+   cursor: pointer;
+}
+
+.active {
+   color: orange;
+}
+
+.rate_bottom {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}

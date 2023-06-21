@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import MovieDetail from "./GioiThieuPhimHook";
+import LikeShare from "../../Components/LikeShare/LikeShare";
 import style from "./GioiThieuPhim.module.css";
 
 const GioiThieuPhim = () => {
    const { selectMovie, result, videoTrailer, elementRef } = MovieDetail();
-   console.log(111, selectMovie);
    return (
       <div className={style.intro_movie}>
          <div className={style.intro_title}>
@@ -65,26 +65,8 @@ const GioiThieuPhim = () => {
          </div>
 
          <div className="intro-content">
+            <LikeShare />
             <div className="intro-rate">
-               <p className="mess">Đánh giá phim:</p>
-               <div id="star-container">
-                  <div className="star-widget">
-                     <i className="fa-solid fa-star" title="Dở tệ"></i>
-                     <i className="fa-solid fa-star" title="Dở"></i>
-                     <i className="fa-solid fa-star" title="Không hay"></i>
-                     <i className="fa-solid fa-star" title="Không hay lắm"></i>
-                     <i className="fa-solid fa-star" title="Bình thường"></i>
-                     <i className="fa-solid fa-star" title="Xem Được"></i>
-                     <i className="fa-solid fa-star" title="Có vẻ hay"></i>
-                     <i className="fa-solid fa-star" title="Hay"></i>
-                     <i className="fa-solid fa-star" title="Rất hay"></i>
-                     <i className="fa-solid fa-star" title="Tuyệt phẩm"></i>
-                     <div id="like-rate" className="like-rate">
-                        (<span id="rate-count">0</span>/10)
-                     </div>
-                  </div>
-                  <p id="ketQua"></p>
-               </div>
                <hr className={style.content_hr} />
                <ul className={style.content_info}>
                   <li className={style.content_item}>
@@ -136,7 +118,7 @@ const GioiThieuPhim = () => {
                <hr className={style.content_hr} />
                <div className={style.content_review}>
                   <p className={style.review_title}>Nội dung phim và review:</p>
-                  <span className={style.review_content}>{selectMovie?.review}</span>
+                  <p className={style.review_content}>{selectMovie?.review}</p>
                </div>
             </div>
          </div>

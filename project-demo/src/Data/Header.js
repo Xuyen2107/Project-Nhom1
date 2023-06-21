@@ -5,7 +5,6 @@ export const dataHeader = [
    },
    {
       Name: "DANH MỤC",
-      Link: "hgfdsjhgf",
       Icon: "fa-solid fa-angle-down",
       SubMenu: [
          {
@@ -28,7 +27,6 @@ export const dataHeader = [
    },
    {
       Name: "THỂ LOẠI",
-      Link: "#",
       Icon: "fa-solid fa-angle-down",
       SubMenu: [
          {
@@ -79,7 +77,6 @@ export const dataHeader = [
    },
    {
       Name: "QUỐC GIA",
-      Link: "#",
       Icon: "fa-solid fa-angle-down",
       SubMenu: [
          {
@@ -118,7 +115,6 @@ export const dataHeader = [
    },
    {
       Name: "NĂM PHÁT HÀNH",
-      Link: "#",
       Icon: "fa-solid fa-angle-down",
       SubMenu: [
          {

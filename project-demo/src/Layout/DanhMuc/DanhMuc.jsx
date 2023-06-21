@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Card from "../../Components/Card/Card";
+import CategoryTitle from "../../Components/CategoryTitle/CategoryTitle";
 import DanhMucHook from "./DanhMucHook";
 import style from "./DanhMuc.module.css";
 
@@ -9,8 +10,7 @@ const DanhMuc = () => {
 
    return (
       <div className={style.list_movie}>
-         <label className={style.category}>{category}</label>
-         <hr className={style.hr} />
+         <CategoryTitle category={category} />
          <div className={style.container_movies}>
             <div className={style.title_home}>
                <NavLink to="/" className={style.home_link}>
@@ -18,7 +18,7 @@ const DanhMuc = () => {
                   Phim mới
                </NavLink>
                <i className={`fa-solid fa-angle-right ${style.home_icon}`}></i>
-               <span className={style.category_1}>Phim Lẻ</span>
+               <span className={style.category_1}>{category}</span>
             </div>
 
             <p className={style.slogan}>Phim mới được cập nhật mỗi ngày</p>
@@ -42,9 +42,7 @@ const DanhMuc = () => {
          <div>
             <ul className={style.pagination}>
                <li>
-                  <NavLink to="#" className={style.current}>
-                     1
-                  </NavLink>
+                  <NavLink className={style.current}>1</NavLink>
                </li>
             </ul>
          </div>
