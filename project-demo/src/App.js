@@ -1,13 +1,15 @@
 import Navigate from "./Navigate.jsx";
 import DanhMuc from "./Layout/DanhMuc/DanhMuc.jsx";
 import "./App.css";
+import "./Layout/Login/LoginSignup.css";
+
 function App() {
-   return (
-      <div className="App">
-         <Navigate />
-         {/* <DanhMuc /> */}
-      </div>
-   );
+  return (
+    <div className="App">
+      <Navigate />
+      {/* <DanhMuc /> */}
+    </div>
+  );
 }
 
 export default App;
