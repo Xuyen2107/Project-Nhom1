@@ -2,6 +2,7 @@ import Navigate from "./Navigate.jsx";
 import Header from "./Components/Header/Header.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import "./App.css";
+import "./Layout/Login/LoginSignup.css";
 
 function App() {
   return (

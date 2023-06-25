@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { registeredUsers } from "../../Data/RegisteredUsers";
-import Card from "../../Components/Card/Card";
-import style from "../DanhMuc/DanhMuc.module.css";
 
 const LoginForm = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  // const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleClose = () => {
     setIsOpen(false);
-    window.location.href = "/";
   };
 
   const handleEmailChange = (e) => {
@@ -24,37 +21,17 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
+  // const handlePhoneNumberChange = (e) => {
+  //   setPhoneNumber(e.target.value);
+  // };
+
+  // const checkEmail = registeredUsers.find((x) => x.email != email);
+  // if (checkEmail) {
+  // alert("Email không tồn tại");
+  // }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = registeredUsers.find((user) => user.email === email);
-
-    if (user && user.password === password) {
-      alert("Bạn đã đăng nhập thành công!");
-      // const favoriteFilms = user.favorites;
-      // return (
-      //   <div>
-      //   {favoriteFilms.length > 0 ? (
-      //     <div>
-      //       <h2>Danh sách phim:</h2>
-      //       <ul className={style.row_card}>
-      //         {favoriteFilms.map((item) => (
-      //           <Card
-      //             key={item?.id}
-      //             nowPlaying={item?.nowPlaying}
-      //             name={item?.name}
-      //             link={item?.link}
-      //             id={item?.id}
-      //             image={item?.image}
-      //           />
-      //         ))}
-      //       </ul>
-      //     </div>
-      // ) : (
-      //   <p>Bạn chưa có phim yêu thích</p>
-      // )
-    } else {
-      alert("Email hoặc mật khẩu không tồn tại!");
-    }
   };
 
   return (
@@ -83,7 +60,16 @@ const LoginForm = () => {
             />
             {error && <p className="error">{error}</p>}
           </div>
-
+          {/* <div>
+            <label htmlFor="phone">Số điện thoại:</label>
+            <input
+              type="tel"
+              id="phone"
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+              required
+            />
+          </div> */}
           <br />
           <button id="submit" type="submit">
             Đăng nhập
@@ -96,5 +82,4 @@ const LoginForm = () => {
     </div>
   );
 };
-
 export default LoginForm;
