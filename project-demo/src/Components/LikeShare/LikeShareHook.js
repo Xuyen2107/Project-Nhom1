@@ -26,29 +26,29 @@ const LikeShareHook = () => {
       if (!userLogin) {
          alert("Vui lòng đăng nhập để thích phim");
          navigateLogin("/dang-nhap");
+      } else {
+         const updatedListLike = listLike.map((movie) => {
+            if (movie.MovieId === movieShow.id) {
+               const updatedLikes = movie.Like.map((like) => {
+                  if (like.UserId === userLogin.UserId) {
+                     return {
+                        ...like,
+                        IsLike: !like.IsLike,
+                     };
+                  }
+                  return like;
+               });
+               return {
+                  ...movie,
+                  Like: updatedLikes,
+               };
+            }
+            return movie;
+         });
+
+         setListLike(updatedListLike);
+         localStorage.setItem("listLike", JSON.stringify(updatedListLike));
       }
-
-      const updatedListLike = listLike.map((movie) => {
-         if (movie.MovieId === movieShow.id) {
-            const updatedLikes = movie.Like.map((like) => {
-               if (like.UserId === userLogin.UserId) {
-                  return {
-                     ...like,
-                     IsLike: !like.IsLike,
-                  };
-               }
-               return like;
-            });
-            return {
-               ...movie,
-               Like: updatedLikes,
-            };
-         }
-         return movie;
-      });
-
-      setListLike(updatedListLike);
-      localStorage.setItem("listLike", JSON.stringify(updatedListLike));
    };
 
    const handleStarClick = (position) => {
