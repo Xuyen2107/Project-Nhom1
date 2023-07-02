@@ -13,7 +13,6 @@ const LikeShareHook = () => {
 
    useEffect(() => {
       const movieLike = listLike?.find((x) => x?.MovieId === movieShow.id);
-      console.log(movieLike);
       if (movieLike) {
          const userLike = movieLike.Like?.find((x) => x?.UserId === userLogin?.UserId);
          setLiked(userLike);

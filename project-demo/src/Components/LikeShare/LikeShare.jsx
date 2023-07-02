@@ -5,7 +5,6 @@ import style from "./LikeShare.module.css";
 const LikeShare = () => {
    const { star, movieLikes, ratingCount, getRatingTitle, handleStarClick, liked, handleClick } =
       LikeShareHook();
-   console.log(123, liked);
    return (
       <div className={style.container}>
          <div className={style.container_top}>
