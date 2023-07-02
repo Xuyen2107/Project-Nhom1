@@ -1,0 +1,55 @@
+.form_group {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+   line-height: 1.2;
+   width: 100%;
+}
+
+.form_label {
+   font-weight: 500;
+   margin-bottom: 5px;
+   font-size: 18px;
+}
+
+.form_input {
+   padding: 10px;
+   border: 2px solid #333;
+   color: #333;
+   font-size: 16px;
+   outline: none;
+   border-radius: 10px;
+   width: 100%;
+}
+
+.form_input:focus {
+   border-color: #4caf50;
+}
+
+.error_message {
+   color: red;
+   font-size: 14px;
+}
+
+.form_input::placeholder,
+.form_input:placeholder-shown {
+   color: #333;
+   font-size: 16px;
+   opacity: 0.8;
+}
+
+.input_error,
+.input_error:focus {
+   border: 2px solid red;
+}
+
+.password_show {
+   position: relative;
+}
+
+.password_show_btn {
+   position: absolute;
+   right: 20px;
+   top: 0;
+   transform: translateY(50%);
+}

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 const Slide = () => {
-   const slides = ["Slide 1", "Slide 2", "Slide 3"]; // Nội dung của slide
-   const [currentSlide, setCurrentSlide] = useState(0); // Index của slide hiện tại
+   const slides = ["Slide 1", "Slide 2", "Slide 3"];
+   const [currentSlide, setCurrentSlide] = useState(0);
 
    const nextSlide = () => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
@@ -22,7 +22,6 @@ const Slide = () => {
          nextSlide();
       }, 5000);
 
-      // Dừng slide show khi component bị unmount
       return () => {
          clearInterval(slideTimer);
       };

@@ -14,6 +14,7 @@ const HomeHock = () => {
    const [listPhimThinhHanh, setListPhimThinhHanh] = useState([]);
    const [listPhimSapChieu, setListPhimSapChieu] = useState([]);
    const [loading, setLoading] = useState(false);
+
    useEffect(() => {
       window.scrollTo(0, 0);
    }, []);

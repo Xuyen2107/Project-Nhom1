@@ -1,6 +1,23 @@
-.rate_movie {
+.container {
    background-color: #ced6e0;
    padding: 10px 0;
+}
+
+.container_top {
+   display: flex;
+   flex-direction: column;
+   line-height: 1.4;
+   margin-bottom: 10px;
+}
+
+.label {
+   display: block;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.top_span {
+   margin-left: 5px;
 }
 
 .like_share {
@@ -9,7 +26,22 @@
    margin-bottom: 10px;
 }
 
-.like_btn,
+.like_btn {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   border: 1px solid blue;
+   font-size: 16px;
+   padding: 5px 10px;
+   color: #333;
+   border-radius: 10px;
+}
+
+.like_active {
+   background-color: blue;
+   color: #fff;
+}
+
 .share_btn {
    display: flex;
    align-items: center;
@@ -27,13 +59,7 @@
 }
 
 .rate_star {
-   line-height: 1.5;
-}
-
-.rate_title {
-   display: block;
-   font-size: 18px;
-   font-weight: 500;
+   line-height: 1.4;
 }
 
 .start_area {

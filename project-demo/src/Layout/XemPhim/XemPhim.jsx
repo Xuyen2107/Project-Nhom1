@@ -38,7 +38,7 @@ const XemPhim = () => {
 
          <hr className={style.watch_hr} />
 
-         <LikeShare likeNumber={selectMovie?.like} rateNumber={selectMovie?.rate} />
+         {/* <LikeShare /> */}
 
          <hr className={style.watch_hr_1} />
          <div className={style.watch_bottom}>

@@ -1,21 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
+import { HomeContext } from "../../Context/HomeContext";
 import { useParams } from "react-router-dom";
 import { allMovies } from "../../Data/DataALLMovies.js";
 
 const MovieDetail = () => {
+   const { setMovieShow } = useContext(HomeContext);
    const { id } = useParams();
-   const [movieId, link] = id.split("_");
-   const [listAllMovie, setListAllMovie] = useState(allMovies);
-   const [selectMovie, setSelectMovie] = useState([]);
+   const [movieId, link] = id?.split("_");
    const [result, setResult] = useState(false);
    const elementRef = useRef();
 
    useEffect(() => {
-      if (movieId && listAllMovie.length > 0) {
-         const movieDetail = listAllMovie.find((x) => x.id === parseInt(movieId));
-         setSelectMovie(movieDetail);
+      if (movieId) {
+         const movieDetail = allMovies.find((x) => x.id === parseInt(movieId));
+         setMovieShow(movieDetail);
       }
-   }, [movieId, listAllMovie]);
+   }, [movieId, setMovieShow]);
 
    useEffect(() => {
       if (result) {
@@ -27,7 +27,7 @@ const MovieDetail = () => {
       setResult(!result);
    };
 
-   return { selectMovie, result, videoTrailer, elementRef };
+   return { result, videoTrailer, elementRef };
 };
 
 export default MovieDetail;

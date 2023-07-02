@@ -21,7 +21,6 @@ video {
 input,
 select,
 textarea {
-   background-color: transparent;
    outline: none;
 }
 button {

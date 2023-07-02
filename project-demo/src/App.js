@@ -1,17 +1,12 @@
-import Navigate from "./Navigate.jsx";
-import Header from "./Components/Header/Header.jsx";
-import Footer from "./Components/Footer/Footer.jsx";
+import Navigates from "./Navigate.jsx";
 import "./App.css";
-import "./Layout/Login/LoginSignup.css";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Navigate />
-      <Footer />
-    </div>
-  );
+   return (
+      <div className="App">
+         <Navigates />
+      </div>
+   );
 }
 
 export default App;

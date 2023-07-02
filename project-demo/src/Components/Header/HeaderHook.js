@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { HomeContext } from "../../Context/HomeContext.js";
 import { allMovies } from "../../Data/DataALLMovies.js";
+import Cookies from "js-cookie";
 
 const HookHeader = () => {
+   const { setUserLogin } = useContext(HomeContext);
    const [inputValue, setInputValue] = useState("");
    const [listAllMovie, setListAllMovie] = useState([]);
-   const [listMovie, setListMovie] = useState([]);
+   const [listMovieSearch, setListMovieSearch] = useState([]);
    const [result, setResult] = useState(false);
 
    useEffect(() => {
@@ -25,7 +28,7 @@ const HookHeader = () => {
    }, []);
 
    useEffect(() => {
-      if (inputValue.length > 0) {
+      if (inputValue) {
          const searchResults = listAllMovie.filter((movie) => {
             for (let prop in movie) {
                if (movie[prop].toString().toLowerCase().includes(inputValue.toLowerCase())) {
@@ -34,9 +37,9 @@ const HookHeader = () => {
             }
             return false;
          });
-         setListMovie(searchResults);
+         setListMovieSearch(searchResults);
       } else {
-         setListMovie([]);
+         setListMovieSearch([]);
       }
    }, [inputValue, listAllMovie]);
 
@@ -50,11 +53,16 @@ const HookHeader = () => {
       setInputValue(e.target.value);
    };
 
-   const click = () => {
-      setResult(!result);
+   const searchClick = () => {
+      setResult((prevResult) => !prevResult);
    };
 
-   return { searchInputChange, listMovie, inputValue, result, click };
+   const logOut = () => {
+      setUserLogin(null);
+      Cookies.remove("userLogin");
+   };
+
+   return { inputValue, listMovieSearch, result, searchInputChange, searchClick, logOut };
 };
 
 export default HookHeader;

@@ -1,85 +1,55 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import CustomInput from "../../Components/CustomInput/CustomInput";
+import LogInHook from "./LogInHook";
+import style from "./LogIn.module.css";
 
-const LoginForm = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  // const [phoneNumber, setPhoneNumber] = useState("");
+const LogIn = () => {
+   const { error, show, handleInputChange, showPassword, logInClick } = LogInHook();
 
-  const handleClose = () => {
-    setIsOpen(false);
-  };
+   return (
+      <div className={style.form}>
+         <form className={style.form_log_in}>
+            <h3 className={style.title}>Đăng nhập</h3>
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  // const handlePhoneNumberChange = (e) => {
-  //   setPhoneNumber(e.target.value);
-  // };
-
-  // const checkEmail = registeredUsers.find((x) => x.email != email);
-  // if (checkEmail) {
-  // alert("Email không tồn tại");
-  // }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  return (
-    <div id="container" className={`LoginForm ${isOpen ? "open" : "closed"}`}>
-      {isOpen && (
-        <form onSubmit={handleSubmit}>
-          <h1>Đăng nhập</h1>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={handleEmailChange}
-              required
+            <CustomInput
+               label="Tài khoản"
+               type="text"
+               name="Tài khoản"
+               placeholder="Nhập số điện thoại hoặc email của bạn"
+               onChange={(e) => {
+                  handleInputChange(e, "TaiKhoan");
+               }}
+               error={error.TaiKhoan}
             />
-          </div>
-          <div>
-            <label htmlFor="password">Mật khẩu:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={handlePasswordChange}
-              required
+
+            <CustomInput
+               label="Mât khẩu:"
+               type={show ? "text" : "password"}
+               name="Mật khẩu"
+               placeholder="Nhập mật khẩu của bạn"
+               onChange={(e) => {
+                  handleInputChange(e, "Password");
+               }}
+               showPassword
+               show={show}
+               onClick={showPassword}
+               error={error.Password}
             />
-            {error && <p className="error">{error}</p>}
-          </div>
-          {/* <div>
-            <label htmlFor="phone">Số điện thoại:</label>
-            <input
-              type="tel"
-              id="phone"
-              value={phoneNumber}
-              onChange={handlePhoneNumberChange}
-              required
-            />
-          </div> */}
-          <br />
-          <button id="submit" type="submit">
-            Đăng nhập
-          </button>
-          <button type="button" onClick={handleClose} id="clear-button">
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
-        </form>
-      )}
-    </div>
-  );
+            <button className={style.form_submit_button} type="button" onClick={logInClick}>
+               Đăng Nhập
+            </button>
+            <div className={style.form_bottom}>
+               <NavLink to="/quen-mat-khau" className={style.link_to_forget}>
+                  Quên mật khẩu?
+               </NavLink>
+               <NavLink to="/dang-ki" className={style.link_to_register}>
+                  Đăng kí?
+               </NavLink>
+            </div>
+         </form>
+      </div>
+   );
 };
-export default LoginForm;
+
+export default LogIn;

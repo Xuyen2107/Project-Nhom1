@@ -1,30 +1,46 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Outlet } from "react-router-dom";
 import Home from "./Layout/Home/Home.jsx";
 import GioiThieuPhim from "./Layout/GioiThieuPhim/GioiThieuPhim.jsx";
 import DanhMuc from "./Layout/DanhMuc/DanhMuc.jsx";
 import XemPhim from "./Layout/XemPhim/XemPhim.jsx";
-import LoginForm from "./Layout/Login/Login.jsx";
-import SignupForm from "./Layout/Login/Signup.jsx";
+import LogIn from "./Layout/Login/LogIn.jsx";
 import NotFound from "./Layout/NotFound.jsx";
+import Header from "./Components/Header/Header.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
+import Regisster from "./Layout/Login/Register.jsx";
 
-const Navigate = () => {
-  return (
-    <div>
-      {/* <Header /> */}
-      <Routes>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/gioi-thieu-phim/:id" element={<GioiThieuPhim />} />
-        <Route path="/danh-muc" element={<DanhMuc />} />
-        <Route path="/xem-phim/:idx" element={<XemPhim />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/register" element={<SignupForm />} />
-      </Routes>
-
-      {/* <Footer /> */}
-    </div>
-  );
+const MainLayout = ({ children }) => {
+   return (
+      <div>
+         <Header />
+         {children}
+         <Footer />
+      </div>
+   );
 };
 
-export default Navigate;
+const Navigates = () => {
+   return (
+      <Routes>
+         <Route
+            path="/"
+            element={
+               <MainLayout>
+                  <Outlet />
+               </MainLayout>
+            }
+         >
+            <Route index element={<Home />} />
+            <Route path="gioi-thieu-phim/:id" element={<GioiThieuPhim />} />
+            <Route path="danh-muc" element={<DanhMuc />} />
+            <Route path="xem-phim/:idx" element={<XemPhim />} />{" "}
+            <Route path="dang-ki" element={<Regisster />} />
+            <Route path="dang-nhap" element={<LogIn />} />
+         </Route>
+         <Route path="*" element={<NotFound />} />
+      </Routes>
+   );
+};
+
+export default Navigates;
