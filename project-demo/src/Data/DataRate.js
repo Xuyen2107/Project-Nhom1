@@ -4,11 +4,11 @@ export const ListRateDefault = [
       ListRate: [
          {
             UserId: 1,
-            Rate: 7,
+            Rate: 10,
          },
          {
             UserId: 2,
-            Rate: 5,
+            Rate: 9,
          },
          {
             UserId: 5,

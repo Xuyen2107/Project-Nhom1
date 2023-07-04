@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import MovieWatchDetail from "./XemPhimHook";
+import MovieDetail from "../GioiThieuPhim/GioiThieuPhimHook";
+import { HomeContext } from "../../Context/HomeContext";
 import LikeShare from "../../Components/LikeShare/LikeShare";
+import Comment from "../../Components/Comment/Comment.jsx";
 import style from "./XemPhim.module.css";
 
 const XemPhim = () => {
-   const { selectMovie } = MovieWatchDetail();
+   const { movieShow } = useContext(HomeContext);
+   const {} = MovieDetail();
    return (
       <div className={style.watch_movie}>
          <div className={style.watch_title}>
@@ -16,18 +19,18 @@ const XemPhim = () => {
             <i className={`fa-solid fa-angle-right ${style.icon_home}`}></i>
             <span> Xem Phim </span>
             <i className={`fa-solid fa-angle-right ${style.icon_home}`}></i>
-            <span>{selectMovie?.name}</span>
+            <span>{movieShow?.name}</span>
          </div>
 
          <div className={style.watch_video}>
             <iframe
                width="100%"
                height="100%"
-               src={selectMovie?.iframe}
+               src={movieShow?.iframe}
                title="YouTube video player"
-               frameborder="0"
+               frameBorder="0"
                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-               allowfullscreen
+               allowFullScreen
             ></iframe>
          </div>
 
@@ -38,21 +41,22 @@ const XemPhim = () => {
 
          <hr className={style.watch_hr} />
 
-         {/* <LikeShare /> */}
+         <LikeShare />
 
          <hr className={style.watch_hr_1} />
          <div className={style.watch_bottom}>
-            <span className={style.watch_name}>{selectMovie?.name}</span>
+            <span className={style.watch_name}>{movieShow?.name}</span>
             <div className={style.watch_content}>
-               <p className={style.review}>{selectMovie?.review}</p>
+               <p className={style.review}>{movieShow?.review}</p>
                <NavLink
-                  to={`/gioi-thieu-phim/${selectMovie?.id}_${selectMovie?.link}`}
+                  to={`/gioi-thieu-phim/${movieShow?.id}_${movieShow?.link}`}
                   className={style.content_link}
                >
                   [Xem Thêm Tại Đây]
                </NavLink>
             </div>
          </div>
+         <Comment />
       </div>
    );
 };

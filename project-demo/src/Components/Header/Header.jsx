@@ -132,12 +132,22 @@ const Header = () => {
                </form>
                {inputValue.length > 0 && (
                   <div className="return">
-                     <ul>
+                     <ul style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                         {listMovieSearch.length === 0 && inputValue.length > 0 ? (
                            <li>Không có kết quả tìm kiếm cho từ khóa "{inputValue}"</li>
                         ) : (
                            listMovieSearch?.map((movie) => (
-                              <li key={movie.id}>
+                              <li
+                                 key={movie.id}
+                                 style={{ display: "flex", alignItems: "flex-start", gap: "5px" }}
+                              >
+                                 {movie?.image && (
+                                    <img
+                                       style={{ width: "30px", height: "40px" }}
+                                       src={require(`../../Image/Movie-Item/${movie?.image}`)}
+                                       alt="Ảnh"
+                                    />
+                                 )}
                                  <NavLink
                                     to={`/gioi-thieu-phim/${movie?.id}_${movie?.link}`}
                                     className="return-link"

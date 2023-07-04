@@ -1,3 +1,7 @@
+.watch_movie {
+   padding: 0 50px;
+}
+
 .watch_title {
    display: flex;
    align-items: center;
@@ -52,6 +56,11 @@
    font-weight: 500;
    color: orange;
    margin-bottom: 10px;
+}
+
+.watch_bottom {
+   background-color: #ced6e0;
+   padding: 10px 0;
 }
 
 .watch_content {

@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { HomeContext } from "../../Context/HomeContext";
 import { useNavigate } from "react-router-dom";
 import Validate from "./Validate";
+import { toast } from "react-toastify";
 
 const userDefault = {
    Ho: "",
@@ -22,11 +23,10 @@ const errorMessage = {
 };
 
 const RegisterHook = () => {
-   const { listUser, setListUser } = useContext(HomeContext);
    const navigate = useNavigate();
+   const { listUser, setListUser } = useContext(HomeContext);
    const [show, setShow] = useState(false);
    const [reShow, setReShow] = useState(false);
-
    const [user, setUser] = useState(userDefault);
    const [error, setError] = useState(errorMessage);
    const { validateEmail, validatePassword, validatePhoneNumberVN, validateText } = Validate();
@@ -62,7 +62,7 @@ const RegisterHook = () => {
             user.RePassword &&
             (user.RePassword !== user.Password ? "Mật khẩu nhập lại chưa đúng" : ""),
       }));
-   }, [user, validateEmail, validatePassword, validatePhoneNumberVN, validateText, listUser]);
+   }, [user, listUser]);
 
    const genId = () => {
       const Id = Math.floor(Math.random() * 100);
@@ -87,7 +87,6 @@ const RegisterHook = () => {
       if (!userNotEmpty) {
          const checkPhone = listUser.find((item) => item.Phone === user.Phone);
          const checkEmail = listUser.find((item) => item.Email === user.Email);
-
          setError((prevError) => ({
             ...prevError,
             Ho: user.Ho
@@ -142,6 +141,7 @@ const RegisterHook = () => {
          };
 
          const updateListUser = [...listUser, users];
+         toast.success(`Bạn đã đăng kí thành công. Hãy đăng nhập rồi quay lại trang chủ nhé! `);
          setListUser(updateListUser);
          localStorage.setItem("listUser", JSON.stringify(updateListUser));
          alert("Bạn đã đăng kí thành công");

@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { HomeContext } from "../../Context/HomeContext";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 
 const accountDefault = {
    TaiKhoan: "",
@@ -57,11 +58,14 @@ const LogInHook = () => {
          );
 
          if (!userDefault) {
-            alert("Tài khoản không tồn tại");
+            toast.success("Tài khoản không tồn tại");
          } else {
             if (userDefault?.Password !== account?.Password) {
-               alert("Mật khẩu bạn nhập không chính xác");
+               toast.success("Mật khẩu chưa chính xác");
             } else {
+               toast.success(
+                  `Bạn đã đăng nhập thành công. Xin chào ${userDefault.Ho} ${userDefault.Ten} `
+               );
                setUserLogin(userDefault);
                Cookies.set("userLogin", JSON.stringify(userDefault));
                navigateHome("/");

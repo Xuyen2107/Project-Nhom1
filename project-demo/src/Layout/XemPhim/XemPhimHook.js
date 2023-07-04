@@ -1,24 +1,19 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { allMovies } from "../../Data/DataALLMovies.js";
+// import { useState, useEffect, useContext } from "react";
+// import { HomeContext } from "../../Context/HomeContext";
+// import { useParams } from "react-router-dom";
+// import { allMovies } from "../../Data/DataALLMovies.js";
 
-const MovieWatchDetail = () => {
-   const { idx } = useParams();
-   const [movieId, link] = idx.split("_");
+// const MovieWatchDetail = () => {
+//    const { id } = useParams();
+//    const { setMovieShow } = useContext(HomeContext);
+//    const [movieId, link] = id?.split("_");
 
-   const [selectMovie, setSelectMovie] = useState(null);
-   const [listAllMovie, setListAllMovie] = useState([]);
+//    useEffect(() => {
+//       const movieDetail = allMovies.find((x) => x.id === parseInt(movieId));
+//       setMovieShow(movieDetail);
+//    }, [movieId, setMovieShow]);
 
-   useEffect(() => {
-      setListAllMovie(allMovies);
-   }, []);
+//    return { movieId, allMovies };
+// };
 
-   useEffect(() => {
-      const movieDetail = listAllMovie.find((x) => x.id === parseInt(movieId));
-      setSelectMovie(movieDetail);
-   }, [movieId, listAllMovie]);
-
-   return { selectMovie, movieId, allMovies };
-};
-
-export default MovieWatchDetail;
+// export default MovieWatchDetail;

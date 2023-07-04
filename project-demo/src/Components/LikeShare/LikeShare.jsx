@@ -3,8 +3,17 @@ import LikeShareHook from "./LikeShareHook.js";
 import style from "./LikeShare.module.css";
 
 const LikeShare = () => {
-   const { star, movieLikes, ratingCount, getRatingTitle, handleStarClick, liked, handleClick } =
-      LikeShareHook();
+   const {
+      star,
+      like,
+      numberLikes,
+      rate,
+      averageNumberRate,
+      numberRate,
+      getRatingTitle,
+      handleLikeClick,
+      handleStarClick,
+   } = LikeShareHook();
    return (
       <div className={style.container}>
          <div className={style.container_top}>
@@ -14,27 +23,30 @@ const LikeShare = () => {
                   <i
                      key={rating}
                      className={`fa-solid fa-star ${style.star_icon} ${
-                        rating <= 8 ? style.active : ""
+                        rating <= Math.round(averageNumberRate) ? style.active : ""
                      }`}
                      title={getRatingTitle(rating)}
                   />
                ))}
-               <span className={style.top_span}>Cũng được</span>
+               <span>({averageNumberRate}/10)</span>
+               <span className={style.top_span}>
+                  {getRatingTitle(Math.round(averageNumberRate))}
+               </span>
             </div>
             <div className={style.rate_bottom}>
-               <span className={style.rate_number}>10</span>
+               <span className={style.rate_number}>{numberRate}</span>
                <span className={style.rate_name}>Đánh giá</span>
             </div>
          </div>
          <div className={style.like_share}>
             <button
-               className={`${style.like_btn} ${liked?.IsLike ? style.like_active : ""}`}
+               className={`${style.like_btn} ${like ? style.like_active : ""}`}
                type="button"
-               onClick={handleClick}
+               onClick={handleLikeClick}
             >
                <span className={style.like}>Like</span>
                <i className={`fa-solid fa-thumbs-up ${style.like_icon}`}></i>
-               <span className={style.like_number}>{movieLikes}</span>
+               <span className={style.like_number}>{numberLikes}</span>
             </button>
             <button className={style.share_btn} type="button">
                <span className={style.share}>Share</span>
@@ -43,20 +55,21 @@ const LikeShare = () => {
          </div>
          <div className={style.rate_star}>
             <label className={style.label}>Đánh giá của bạn :</label>
+
             <div className={style.start_area}>
                <div className={style.star}>
-                  {star.map((rating) => (
+                  {star.map((itemRate) => (
                      <i
-                        key={rating}
+                        key={itemRate}
                         className={`fa-solid fa-star ${style.star_icon} ${
-                           rating <= ratingCount ? style.active : ""
+                           itemRate <= rate ? style.active : ""
                         }`}
-                        title={getRatingTitle(rating)}
-                        onClick={() => handleStarClick(rating)}
+                        title={getRatingTitle(itemRate)}
+                        onClick={() => handleStarClick(itemRate)}
                      />
                   ))}
                </div>
-               <span className={style.result}>h</span>
+               <span className={style.result}>{getRatingTitle(rate)}</span>
             </div>
          </div>
       </div>

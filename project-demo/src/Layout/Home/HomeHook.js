@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
 import { allMovies } from "../../Data/DataALLMovies.js";
 
-const filterMovie = (condition, numberStart, numberEnd) => {
-   const arr = allMovies.filter((item) => item.category.includes(condition));
-   const newArr = arr.reverse().slice(numberStart, numberEnd);
-   return newArr;
-};
 const HomeHock = () => {
    const [movies, setMovies] = useState(null);
    const [listPhimLe, setListPhimLe] = useState([]);
@@ -14,6 +9,12 @@ const HomeHock = () => {
    const [listPhimThinhHanh, setListPhimThinhHanh] = useState([]);
    const [listPhimSapChieu, setListPhimSapChieu] = useState([]);
    const [loading, setLoading] = useState(false);
+
+   const filterMovie = (condition, numberStart, numberEnd) => {
+      const arr = movies?.filter((item) => item.category.includes(condition));
+      const newArr = arr?.reverse().slice(numberStart, numberEnd);
+      return newArr;
+   };
 
    useEffect(() => {
       window.scrollTo(0, 0);
@@ -25,6 +26,7 @@ const HomeHock = () => {
 
    useEffect(() => {
       setLoading(true);
+      const movieClone = JSON.parse(JSON.stringify(movies));
       const phimLe = filterMovie("Phim Lẻ", 0, 12);
       setListPhimLe(phimLe);
 
@@ -34,7 +36,7 @@ const HomeHock = () => {
       const phimChieuRap = filterMovie("Phim Chiếu Rạp", 0, 12);
       setListPhimChieuRap(phimChieuRap);
 
-      const phimThinhHanh = filterMovie("Phim Thịnh Hành", 0, 12);
+      const phimThinhHanh = movieClone?.sort(() => Math.random() - 0.5).slice(0, 15);
       setListPhimThinhHanh(phimThinhHanh);
 
       const phimSapChieu = filterMovie("Phim Sắp Chiếu", 0, 7);

@@ -3,6 +3,7 @@ import { HomeContext } from "../../Context/HomeContext";
 import { NavLink } from "react-router-dom";
 import MovieDetail from "./GioiThieuPhimHook";
 import LikeShare from "../../Components/LikeShare/LikeShare";
+import Comment from "../../Components/Comment/Comment.jsx";
 import style from "./GioiThieuPhim.module.css";
 
 const GioiThieuPhim = () => {
@@ -115,9 +116,9 @@ const GioiThieuPhim = () => {
                                  height="100%"
                                  src={movieShow?.iframe}
                                  title="YouTube video player"
-                                 frameborder="0"
+                                 frameBorder="0"
                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                 allowfullscreen
+                                 allowFullScreen
                               ></iframe>
                            </div>
                         </div>
@@ -129,6 +130,7 @@ const GioiThieuPhim = () => {
                      </div>
                   </div>
                </div>
+               <Comment />
             </div>
          )}
       </div>

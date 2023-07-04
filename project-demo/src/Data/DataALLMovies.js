@@ -24,7 +24,7 @@ export const allMovies = [
       like: 12,
       review:
          "Thợ Săn Thành Phố: Căn Cứ Bí Mật Shinjuku City Hunter: Shinjuku Private Eyes 2019 Full HD Vietsub Thuyết Minh Thám tử tư Ryo Saeba được thuê để bảo vệ con gái của một nhà khoa học vừa qua đời trong một vụ tai nạn giao thông đáng ngờ.",
-      link1: "/GioiThieuPhim/tho-san-thanh-pho-can-cu-bi-mat-shinju ku",
+      link: "tho-san-thanh-pho-can-cu-bi-mat-shinjuku",
       link2: "/XemPhim/tho-san-thanh-pho-can-cu-bi-mat-shinjuku",
       iframe: "https://www.youtube.com/embed/8CZLJxfPrjM",
    },
@@ -52,7 +52,7 @@ export const allMovies = [
       like: 10,
       review:
          "Josee to Tora to Sakana-tachi Josee, the Tiger and the Fish 2020 Full HD Vietsub Thuyết Minh Tsuneo là một sinh viên đại học nghiên cứu sinh học và yêu đại dương, thích lặn biển giải trí và làm việc trong một cửa hàng đồ lặn để thực hiện ước mơ lặn ở nước ngoài của mình. Một ngày nọ, cuộc gặp gỡ bất ngờ với Josee, một thiếu nữ tàn tật lầm lì và hay đòi hỏi sẽ đưa họ trải qua một cuộc hành trình giàu lòng trắc ẩn, đầy cảm hứng, yêu thương và tràn ngập sự hồn nhiên như trẻ thơ.",
-      link1: "./GioiThieuPhim/josee-to-tora-to-sakana-tachi",
+      link: "josee-to-tora-to-sakana-tachi",
       link2: "./XemPhim/josee-to-tora-to-sakana-tachi",
       iframe: "https://www.youtube.com/embed/YFpJf1q-hZQ",
    },

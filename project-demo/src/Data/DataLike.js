@@ -1,252 +1,42 @@
 export const ListLikeDefault = [
    {
       MovieId: 1,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: true,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [1, 2, 3, 5, 6],
    },
    {
       MovieId: 2,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [1, 5, 7, 10],
    },
    {
       MovieId: 3,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [1, 5, 8, 6],
    },
    {
       MovieId: 4,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [5, 2, 7, 8],
    },
    {
       MovieId: 5,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: false,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [5, 6, 8, 10],
    },
    {
       MovieId: 6,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [1, 5, 8, 10],
    },
    {
       MovieId: 7,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [1, 3, 6, 8],
    },
    {
       MovieId: 8,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [1, 5, 7, 8],
    },
    {
       MovieId: 9,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [1, 5, 7, 9],
    },
    {
       MovieId: 10,
-      Like: [
-         {
-            UserId: 1,
-            IsLike: false,
-         },
-         {
-            UserId: 3,
-            IsLike: false,
-         },
-         {
-            UserId: 5,
-            IsLike: true,
-         },
-         {
-            UserId: 6,
-            IsLike: false,
-         },
-         {
-            UserId: 8,
-            IsLike: true,
-         },
-      ],
+      Like: [1, 5, 7, 9],
    },
 ];

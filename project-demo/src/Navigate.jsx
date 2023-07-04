@@ -34,7 +34,7 @@ const Navigates = () => {
             <Route index element={<Home />} />
             <Route path="gioi-thieu-phim/:id" element={<GioiThieuPhim />} />
             <Route path="danh-muc" element={<DanhMuc />} />
-            <Route path="xem-phim/:idx" element={<XemPhim />} />{" "}
+            <Route path="xem-phim/:id" element={<XemPhim />} />{" "}
             <Route path="dang-ki" element={<Regisster />} />
             <Route path="dang-nhap" element={<LogIn />} />
          </Route>

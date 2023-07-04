@@ -78,6 +78,10 @@
    color: orange;
 }
 
+.note {
+   height: 30vh;
+}
+
 @media screen and (max-width: 1023px) {
    .all-movie {
       width: 90%;

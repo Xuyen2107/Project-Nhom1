@@ -47,3 +47,23 @@
    width: 500px;
    margin: 20px auto 50px auto;
 }
+
+.list-movie-flex {
+   width: 100%;
+}
+.list-movie-flex img {
+   width: 100%;
+   height: 145px;
+}
+
+.slick-list {
+   height: 145px;
+}
+
+.list-movie-flex li {
+   margin-left: 20px;
+}
+
+.slick-track .slick-current li {
+   margin-left: 0 !important;
+}

@@ -15,12 +15,13 @@ const HomeProvider = ({ children }) => {
    const [listComment, setListComment] = useState([]);
    const [movieShow, setMovieShow] = useState();
 
-   useEffect(() => {
-      localStorage.setItem("listUser", JSON.stringify(ListUserDefault));
-      localStorage.setItem("listLike", JSON.stringify(ListLikeDefault));
-      localStorage.setItem("listRate", JSON.stringify(ListRateDefault));
-      localStorage.setItem("listComment", JSON.stringify(ListCommentDefault));
-   }, []);
+   // useEffect(() => {
+   //    localStorage.setItem("listUser", JSON.stringify(ListUserDefault));
+   //    localStorage.setItem("listLike", JSON.stringify(ListLikeDefault));
+   //    localStorage.setItem("listRate", JSON.stringify(ListRateDefault));
+   //    localStorage.setItem("listComment", JSON.stringify(ListCommentDefault));
+   //    Cookies.remove("userLogin");
+   // }, []);
 
    useEffect(() => {
       const getListUser = localStorage.getItem("listUser");

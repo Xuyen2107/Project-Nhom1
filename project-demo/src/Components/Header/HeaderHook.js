@@ -16,6 +16,7 @@ const HookHeader = () => {
             id: prop.id,
             name: prop.name,
             eName: prop.eName,
+            image: prop.image,
             nowPlaying: prop.nowPlaying,
             year: prop.year,
             country: prop.country,

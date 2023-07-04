@@ -24,28 +24,30 @@ const DanhMuc = () => {
             <p className={style.slogan}>Phim mới được cập nhật mỗi ngày</p>
          </div>
          {list.length > 0 ? (
-            <ul className={style.row_card}>
-               {list.map((item) => (
-                  <Card
-                     key={item?.id}
-                     nowPlaying={item?.nowPlaying}
-                     name={item?.name}
-                     link={item?.link}
-                     id={item?.id}
-                     image={item?.image}
-                  />
-               ))}
-            </ul>
+            <>
+               <ul className={style.row_card}>
+                  {list.map((item) => (
+                     <Card
+                        key={item?.id}
+                        nowPlaying={item?.nowPlaying}
+                        name={item?.name}
+                        link={item?.link}
+                        id={item?.id}
+                        image={item?.image}
+                     />
+                  ))}
+               </ul>
+               <div>
+                  <ul className={style.pagination}>
+                     <li>
+                        <span className={style.current}>1</span>
+                     </li>
+                  </ul>
+               </div>
+            </>
          ) : (
             <h2 className={style.note}>Phim sẽ được cập nhật sau</h2>
          )}
-         <div>
-            <ul className={style.pagination}>
-               <li>
-                  <NavLink className={style.current}>1</NavLink>
-               </li>
-            </ul>
-         </div>
       </div>
    );
 };
