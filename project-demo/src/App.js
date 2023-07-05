@@ -7,7 +7,7 @@ function App() {
    return (
       <div className="App">
          <Navigates />
-         <ToastContainer />
+         <ToastContainer autoClose={3000} />
       </div>
    );
 }

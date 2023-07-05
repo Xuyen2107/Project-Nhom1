@@ -102,14 +102,14 @@ const RegisterHook = () => {
             Phone: user.Phone
                ? validatePhoneNumberVN(user.Phone)
                   ? checkPhone
-                     ? "Số điện thoại đã tồn tại"
+                     ? "Số điện thoại đã tồn tại, vui lòng chọn số điện thoại khác"
                      : ""
                   : "Vui lòng nhập đúng số điện thoại của bạn"
                : "Số điện thoại không được để trống",
             Email: user.Email
                ? validateEmail(user.Email)
                   ? checkEmail
-                     ? "Email đã tồn tại"
+                     ? "Email đã tồn tại, vui lòng chọn email khác"
                      : ""
                   : "Vui lòng nhập đúng email của bạn"
                : "Email không được để trống",
@@ -127,7 +127,7 @@ const RegisterHook = () => {
       }
 
       if (!errorNotEmpty) {
-         alert("Vui lòng kiểm tra đúng các thông tin bên dưới");
+         toast.error("Vui lòng nhập đúng thông tin theo gợi ý");
       }
 
       if (userNotEmpty && errorNotEmpty) {
@@ -144,7 +144,6 @@ const RegisterHook = () => {
          toast.success(`Bạn đã đăng kí thành công. Hãy đăng nhập rồi quay lại trang chủ nhé! `);
          setListUser(updateListUser);
          localStorage.setItem("listUser", JSON.stringify(updateListUser));
-         alert("Bạn đã đăng kí thành công");
          navigate("/dang-nhap");
       }
    };

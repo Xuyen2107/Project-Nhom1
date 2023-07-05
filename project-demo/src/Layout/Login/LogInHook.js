@@ -58,10 +58,10 @@ const LogInHook = () => {
          );
 
          if (!userDefault) {
-            toast.success("Tài khoản không tồn tại");
+            toast.error("Tài khoản không tồn tại");
          } else {
             if (userDefault?.Password !== account?.Password) {
-               toast.success("Mật khẩu chưa chính xác");
+               toast.error("Mật khẩu chưa chính xác");
             } else {
                toast.success(
                   `Bạn đã đăng nhập thành công. Xin chào ${userDefault.Ho} ${userDefault.Ten} `
